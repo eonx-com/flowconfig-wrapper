@@ -1,0 +1,42 @@
+{
+  "name": "eoneopay/flowconfig-wrapper",
+  "description": "Wrapper for Flow Config",
+  "keywords": [
+    "external",
+    "flow-config"
+  ],
+  "license": "MIT",
+  "type": "library",
+  "require": {
+    "code-foundation/flow-config": "^0.1.0"
+  },
+  "require-dev": {
+    "eoneopay/standards": "dev-master",
+    "friendsofphp/php-cs-fixer": "^2.9",
+    "indigophp/doctrine-annotation-autoload": "^0.1.0",
+    "laravel/lumen-framework": "^5.8",
+    "phpmd/phpmd": "^2.6",
+    "phpstan/phpstan": "^0.11",
+    "phpstan/phpstan-phpunit": "^0.11",
+    "phpstan/phpstan-strict-rules": "^0.11",
+    "phpunit/phpunit": "^8.0",
+    "roave/security-advisories": "dev-master",
+    "sebastian/phpcpd": "^4.0",
+    "squizlabs/php_codesniffer": "3.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "LoyaltyCorp\\FlowConfig\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\LoyaltyCorp\\FlowConfig\\": "tests/"
+    }
+  },
+  "minimum-stability": "stable",
+  "config": {
+    "optimize-autoloader": true,
+    "sort-packages": true
+  }
+}
