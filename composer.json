@@ -8,7 +8,13 @@
   "license": "MIT",
   "type": "library",
   "require": {
-    "code-foundation/flow-config": "^0.1.0"
+    "php": ">=7.3",
+    "ext-json": "*",
+    "code-foundation/flow-config": "^0.1.0",
+    "doctrine/orm": "^2.6.3",
+    "eoneopay/externals": "^1.0@rc",
+    "eoneopay/framework": "dev-master",
+    "eoneopay/utils": "^0.2.8"
   },
   "require-dev": {
     "eoneopay/standards": "dev-master",
@@ -34,7 +40,7 @@
       "Tests\\LoyaltyCorp\\FlowConfig\\": "tests/"
     }
   },
-  "minimum-stability": "stable",
+  "minimum-stability": "dev",
   "config": {
     "optimize-autoloader": true,
     "sort-packages": true
