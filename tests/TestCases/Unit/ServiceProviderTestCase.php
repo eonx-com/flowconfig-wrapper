@@ -24,6 +24,8 @@ abstract class ServiceProviderTestCase extends AppTestCase
     public function testBindings(): void
     {
         $application = new ApplicationStub($this->app);
+        $entityManager = $this->app->make('registry')->getManager();
+        $this->setupEntityManagerDrivers($entityManager);
 
         // Create the service provider, register bindings and check they've been specified
         $class = $this->getServiceProvider();

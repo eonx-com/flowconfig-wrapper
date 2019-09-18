@@ -364,21 +364,14 @@ abstract class AppTestCase extends BaseTestCase
      *
      * @return void
      */
-    private function setupEntityManagerDrivers(DoctrineEntityManager $entityManager): void
+    protected function setupEntityManagerDrivers(DoctrineEntityManager $entityManager): void
     {
-        $annotationReader = $this->app->make(AnnotationReader::class);
-        $annotationDriver = new AnnotationDriver(
-            $annotationReader,
-            [\sprintf('%s/../src/Database/Entities', $this->app->basePath())]
-        );
-
         $path = \sprintf('%s/../vendor/code-foundation/flow-config/src/Entity/DoctrineMaps/', $this->app->basePath());
         $xmlDriver = new XmlDriver(
             new DefaultFileLocator($path, '.orm.xml')
         );
 
         $chainDriver = new MappingDriverChain();
-        $chainDriver->addDriver($annotationDriver, 'LoyaltyCorp\Multitenancy');
         $chainDriver->addDriver($xmlDriver, 'CodeFoundation\FlowConfig');
 
         $entityManager->getConfiguration()->setMetadataDriverImpl($chainDriver);
