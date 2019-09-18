@@ -9,19 +9,20 @@ use Doctrine\ORM\Mapping\Driver\XmlDriver;
 use Illuminate\Contracts\Container\Container;
 use Illuminate\Support\ServiceProvider;
 use LaravelDoctrine\ORM\Extensions\MappingDriverChain;
+use LoyaltyCorp\FlowConfig\Database\Exceptions\EntityManagerDriverException;
 use LoyaltyCorp\FlowConfig\Services\FlowConfig;
 use LoyaltyCorp\FlowConfig\Services\Interfaces\FlowConfigInterface;
 
 final class FlowConfigServiceProvider extends ServiceProvider
 {
     /**
-     * Boot mutitenancy services for the application.
+     * Boot Entity Configuration services for FlowConfig.
      *
      * @return void
      *
-     * @throws \App\Exceptions\EntityManagerDriverException
      * @throws \Doctrine\ORM\ORMException
      * @throws \Illuminate\Contracts\Container\BindingResolutionException
+     * @throws \LoyaltyCorp\FlowConfig\Database\Exceptions\EntityManagerDriverException
      */
     public function boot(): void
     {
