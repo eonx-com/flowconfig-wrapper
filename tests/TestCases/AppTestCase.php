@@ -363,7 +363,7 @@ abstract class AppTestCase extends BaseTestCase
      */
     protected function setupEntityManagerDrivers(DoctrineEntityManager $entityManager): void
     {
-        $path = \sprintf('%s/../vendor/code-foundation/flow-config/src/Entity/DoctrineMaps/', $this->app->basePath());
+        $path = \sprintf('%s/vendor/code-foundation/flow-config/src/Entity/DoctrineMaps/', $this->app->basePath());
         $xmlDriver = new XmlDriver(
             new DefaultFileLocator($path, '.orm.xml')
         );
