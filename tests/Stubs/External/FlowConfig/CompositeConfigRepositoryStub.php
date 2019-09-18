@@ -14,7 +14,7 @@ class CompositeConfigRepositoryStub implements CompositeConfigRepositoryInterfac
     private $defaults;
 
     /**
-     * @var string[][]
+     * @var string[][][]
      */
     private $entityConfig;
 

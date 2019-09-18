@@ -16,23 +16,47 @@ use LoyaltyCorp\FlowConfig\Services\Interfaces\FlowConfigInterface;
  */
 class FlowConfigStub implements FlowConfigInterface
 {
+    /**
+     * @var string[]
+     */
+    private $defaults;
+
+    /**
+     * @var string[][][]
+     */
+    private $entityConfig;
+
+    /**
+     * @var string[]
+     */
+    private $systemConfig;
+
+    public function __construct(?array $defaults = null)
+    {
+        $this->defaults = $defaults ?? [];
+    }
+
     public function get(string $key, ?string $default = null): ?string
     {
-        // TODO: Implement get() method.
+        return $this->systemConfig[$key] ?? $this->defaults[$key] ?? $default ?? null;
     }
 
     public function getByEntity(FlowConfigurableInterface $entity, string $key, ?string $default = null): ?string
     {
-        // TODO: Implement getByEntity() method.
+        return $this->entityConfig[$entity->getEntityType()][$entity->getEntityId()][$key]
+            ?? $this->systemConfig[$key]
+            ?? $this->defaults[$key]
+            ?? $default
+            ?? null;
     }
 
     public function set(string $key, string $value): void
     {
-        // TODO: Implement set() method.
+        $this->systemConfig[$key] = $value;
     }
 
     public function setByEntity(FlowConfigurableInterface $entity, string $key, string $value): void
     {
-        // TODO: Implement setByEntity() method.
+        $this->entityConfig[$entity->getEntityType()][$entity->getEntityId()][$key] = $value;
     }
 }
