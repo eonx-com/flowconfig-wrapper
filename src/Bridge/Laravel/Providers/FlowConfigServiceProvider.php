@@ -37,7 +37,7 @@ final class FlowConfigServiceProvider extends ServiceProvider
                 'exceptions.container.em_invalid_driver',
                 [
                     'expected' => MappingDriverChain::class,
-                    'received' => $driver !== null ? \get_class($driver) : null
+                    'received' => $driver !== null ? \get_class($driver) : null,
                 ]
             );
         }
@@ -53,6 +53,7 @@ final class FlowConfigServiceProvider extends ServiceProvider
             '.orm.xml'
         ), 'CodeFoundation\\FlowConfig\\Entity');
     }
+
     /**
      * @noinspection PhpMissingParentCallCommonInspection Parent implementation is empty
      *

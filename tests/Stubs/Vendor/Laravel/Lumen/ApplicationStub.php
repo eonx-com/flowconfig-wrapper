@@ -5,8 +5,6 @@ namespace Tests\LoyaltyCorp\FlowConfig\Stubs\Vendor\Laravel\Lumen;
 
 use ArrayAccess;
 use Closure;
-use Doctrine\Common\Persistence\Mapping\Driver\DefaultFileLocator;
-use Doctrine\ORM\Mapping\Driver\XmlDriver;
 use Illuminate\Contracts\Container\Container;
 use Illuminate\Contracts\Foundation\Application;
 
