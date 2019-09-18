@@ -48,8 +48,8 @@ final class ApplicationBootstrapper
     public static function create(): Application
     {
         // Set the base path and include the autoloader
-        $basePath = \dirname(__DIR__);
-        require_once $basePath . '/../vendor/autoload.php';
+        $basePath = \dirname(__DIR__, 2);
+        require_once $basePath . '/vendor/autoload.php';
 
         // Until Doctrine Annotations v2.0, we need to register an autoloader, which is just 'class_exists'.
         /** @noinspection PhpDeprecationInspection Will be removed with doctrine annotations v2.0 */
