@@ -3,35 +3,25 @@ declare(strict_types=1);
 
 namespace LoyaltyCorp\FlowConfig\Services;
 
-use CodeFoundation\FlowConfig\Interfaces\ConfigRepositoryInterface;
-use CodeFoundation\FlowConfig\Interfaces\EntityConfigRepositoryInterface;
+use CodeFoundation\FlowConfig\Interfaces\CompositeConfigRepositoryInterface;
 use LoyaltyCorp\FlowConfig\Database\Interfaces\FlowConfigurableInterface;
 use LoyaltyCorp\FlowConfig\Services\Interfaces\FlowConfigInterface;
 
 final class FlowConfig implements FlowConfigInterface
 {
     /**
-     * @var \CodeFoundation\FlowConfig\Interfaces\EntityConfigRepositoryInterface
+     * @var \CodeFoundation\FlowConfig\Interfaces\CompositeConfigRepositoryInterface
      */
-    private $entityFlowConfig;
-
-    /**
-     * @var \CodeFoundation\FlowConfig\Interfaces\ConfigRepositoryInterface
-     */
-    private $flowConfig;
+    private $config;
 
     /**
      * FlowConfig constructor.
      *
-     * @param \CodeFoundation\FlowConfig\Interfaces\EntityConfigRepositoryInterface $entityFlowConfig
-     * @param \CodeFoundation\FlowConfig\Interfaces\ConfigRepositoryInterface $flowConfig
+     * @param \CodeFoundation\FlowConfig\Interfaces\CompositeConfigRepositoryInterface $config
      */
-    public function __construct(
-        EntityConfigRepositoryInterface $entityFlowConfig,
-        ConfigRepositoryInterface $flowConfig
-    ) {
-        $this->entityFlowConfig = $entityFlowConfig;
-        $this->flowConfig = $flowConfig;
+    public function __construct(CompositeConfigRepositoryInterface $config)
+    {
+        $this->config = $config;
     }
 
     /**
@@ -39,9 +29,7 @@ final class FlowConfig implements FlowConfigInterface
      */
     public function get(string $key, ?string $default = null): ?string
     {
-        $value = $this->flowConfig->get($key, $default);
-
-        return \is_scalar($value) === true ? (string)$value : null;
+        return $this->config->get($key, $default);
     }
 
     /**
@@ -49,7 +37,7 @@ final class FlowConfig implements FlowConfigInterface
      */
     public function getByEntity(FlowConfigurableInterface $entity, string $key, ?string $default = null): ?string
     {
-        return $this->entityFlowConfig->getByEntity($entity, $key, $default);
+        return $this->config->getByEntity($entity, $key, $default);
     }
 
     /**
@@ -57,7 +45,7 @@ final class FlowConfig implements FlowConfigInterface
      */
     public function set(string $key, string $value): void
     {
-        $this->flowConfig->set($key, $value);
+        $this->config->set($key, $value);
     }
 
     /**
@@ -65,6 +53,6 @@ final class FlowConfig implements FlowConfigInterface
      */
     public function setByEntity(FlowConfigurableInterface $entity, string $key, string $value): void
     {
-        $this->entityFlowConfig->setByEntity($entity, $key, $value);
+        $this->config->setByEntity($entity, $key, $value);
     }
 }

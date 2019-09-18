@@ -3,8 +3,10 @@ declare(strict_types=1);
 
 namespace LoyaltyCorp\FlowConfig\Bridge\Laravel\Providers;
 
+use CodeFoundation\FlowConfig\Repository\CascadeConfig;
 use CodeFoundation\FlowConfig\Repository\DoctrineConfig;
 use CodeFoundation\FlowConfig\Repository\DoctrineEntityConfig;
+use CodeFoundation\FlowConfig\Repository\ReadonlyConfig;
 use Doctrine\ORM\Mapping\Driver\XmlDriver;
 use Illuminate\Contracts\Container\Container;
 use Illuminate\Support\ServiceProvider;
@@ -65,9 +67,14 @@ final class FlowConfigServiceProvider extends ServiceProvider
             $entityManager = $app->make('registry')->getManager();
             $autoFlush = false;
 
+            $configData = [];
+            $entityConfig = new DoctrineEntityConfig($entityManager, $autoFlush);
+            $systemConfig = new DoctrineConfig($entityManager, $autoFlush);
+            $readOnlyConfig = new ReadonlyConfig($configData);
+            $cascade = new CascadeConfig($readOnlyConfig, $systemConfig, $entityConfig);
+
             return new FlowConfig(
-                new DoctrineEntityConfig($entityManager, $autoFlush),
-                new DoctrineConfig($entityManager, $autoFlush)
+                $cascade
             );
         });
     }

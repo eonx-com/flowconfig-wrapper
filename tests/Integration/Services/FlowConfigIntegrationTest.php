@@ -48,11 +48,13 @@ final class FlowConfigIntegrationTest extends AppTestCase
         // flush the changes.
         $this->getEntityManager()->flush();
 
-        $actualValueKey1 = $flowConfig->get('key_1');
-        $actualValueKey2 = $flowConfig->getByEntity($entity, 'key_2');
+        $rootValue = $flowConfig->get('key_1');
+        $passThroughValue = $flowConfig->getByEntity($entity, 'key_1');
+        $entityValue = $flowConfig->getByEntity($entity, 'key_2');
 
-        self::assertSame('value_1', $actualValueKey1);
-        self::assertSame('value_2', $actualValueKey2);
+        self::assertSame('value_1', $rootValue);
+        self::assertSame('value_1', $passThroughValue);
+        self::assertSame('value_2', $entityValue);
     }
 
     /**

@@ -6,6 +6,7 @@ namespace Tests\LoyaltyCorp\FlowConfig\Unit\Services;
 use LoyaltyCorp\FlowConfig\Services\FlowConfig;
 use PHPUnit\Framework\TestCase;
 use Tests\LoyaltyCorp\FlowConfig\Stubs\Database\Entities\FlowConfigEntityStub;
+use Tests\LoyaltyCorp\FlowConfig\Stubs\External\FlowConfig\CompositeConfigRepositoryStub;
 use Tests\LoyaltyCorp\FlowConfig\Stubs\Services\DoctrineConfigStub;
 use Tests\LoyaltyCorp\FlowConfig\Stubs\Services\DoctrineEntityConfigStub;
 
@@ -22,8 +23,7 @@ final class FlowConfigTest extends TestCase
     public function testClassCanBeInitialized(): void
     {
         new FlowConfig(
-            new DoctrineEntityConfigStub(),
-            new DoctrineConfigStub()
+            new CompositeConfigRepositoryStub([])
         );
 
         $this->addToAssertionCount(1);
@@ -74,8 +74,7 @@ final class FlowConfigTest extends TestCase
     private function getService(?array $configs = null): FlowConfig
     {
         return new FlowConfig(
-            new DoctrineEntityConfigStub($configs),
-            new DoctrineConfigStub($configs)
+            new CompositeConfigRepositoryStub($configs)
         );
     }
 }
