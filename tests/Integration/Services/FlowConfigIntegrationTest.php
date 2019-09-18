@@ -3,9 +3,9 @@ declare(strict_types=1);
 
 namespace Tests\LoyaltyCorp\FlowConfig\Integration\Services;
 
+use LoyaltyCorp\FlowConfig\Bridge\Laravel\Providers\FlowConfigServiceProvider;
 use LoyaltyCorp\FlowConfig\Services\FlowConfig;
 use LoyaltyCorp\FlowConfig\Services\Interfaces\FlowConfigInterface;
-use LoyaltyCorp\FlowConfig\Bridge\Laravel\Providers\FlowConfigServiceProvider;
 use Tests\LoyaltyCorp\FlowConfig\Stubs\Database\Entities\FlowConfigEntityStub;
 use Tests\LoyaltyCorp\FlowConfig\TestCases\AppTestCase;
 
@@ -58,7 +58,9 @@ final class FlowConfigIntegrationTest extends AppTestCase
     /**
      * Get flow config instance from container.
      *
-     * @return \LoyaltyCorp\FlowConfig\Services\FlowConfig\FlowConfig
+     * @return \LoyaltyCorp\FlowConfig\Services\FlowConfig
+     *
+     * @throws \Illuminate\Contracts\Container\BindingResolutionException
      */
     protected function getFlowConfig(): FlowConfig
     {
