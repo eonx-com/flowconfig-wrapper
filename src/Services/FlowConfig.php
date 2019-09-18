@@ -5,7 +5,7 @@ namespace LoyaltyCorp\FlowConfig\Services;
 
 use CodeFoundation\FlowConfig\Interfaces\ConfigRepositoryInterface;
 use CodeFoundation\FlowConfig\Interfaces\EntityConfigRepositoryInterface;
-use LoyaltyCorp\FlowConfig\Entities\FlowConfigurableInterface;
+use LoyaltyCorp\FlowConfig\Database\Interfaces\FlowConfigurableInterface;
 use LoyaltyCorp\FlowConfig\Services\Interfaces\FlowConfigInterface;
 
 final class FlowConfig implements FlowConfigInterface

@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace LoyaltyCorp\FlowConfig\Services\Interfaces;
 
-use LoyaltyCorp\FlowConfig\Entities\FlowConfigurableInterface;
+use LoyaltyCorp\FlowConfig\Database\Interfaces\FlowConfigurableInterface;
 
 interface FlowConfigInterface
 {
@@ -20,7 +20,7 @@ interface FlowConfigInterface
     /**
      * Get the config value defined by $key bound to an entity.
      *
-     * @param \LoyaltyCorp\FlowConfig\Entities\FlowConfigurableInterface $entity
+     * @param \LoyaltyCorp\FlowConfig\Database\Interfaces\FlowConfigurableInterface $entity
      * @param string $key
      * @param string|null $default
      *
@@ -41,7 +41,7 @@ interface FlowConfigInterface
     /**
      * Sets a config value bound to an entity.
      *
-     * @param \LoyaltyCorp\FlowConfig\Entities\FlowConfigurableInterface $entity
+     * @param \LoyaltyCorp\FlowConfig\Database\Interfaces\FlowConfigurableInterface $entity
      * @param string $key
      * @param string $value
      *
