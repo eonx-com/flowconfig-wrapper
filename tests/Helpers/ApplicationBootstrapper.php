@@ -5,28 +5,9 @@ namespace Tests\LoyaltyCorp\FlowConfig\Helpers;
 
 use Doctrine\Common\Annotations\AnnotationReader as BaseAnnotationReader;
 use Doctrine\Common\Annotations\AnnotationRegistry;
-use Doctrine\Common\Persistence\ManagerRegistry;
-use EoneoPay\Externals\Bridge\Laravel\EventDispatcher;
 use EoneoPay\Externals\Bridge\Laravel\Providers\ContainerServiceProvider;
-use EoneoPay\Externals\EventDispatcher\Interfaces\EventDispatcherInterface;
-use EoneoPay\Externals\HttpClient\Interfaces\ClientInterface;
-use EoneoPay\Externals\HttpClient\LoggingClient;
-use EoneoPay\Utils\AnnotationReader;
-use EoneoPay\Utils\Arr;
-use EoneoPay\Utils\Bridge\Lumen\Interfaces\Resolvers\ControllerResolverInterface;
-use EoneoPay\Utils\Bridge\Lumen\Resolvers\ControllerResolver;
-use EoneoPay\Utils\Generator;
-use EoneoPay\Utils\Interfaces\AnnotationReaderInterface;
-use EoneoPay\Utils\Interfaces\ArrInterface;
-use EoneoPay\Utils\Interfaces\GeneratorInterface;
-use EoneoPay\Utils\Interfaces\MathInterface;
-use EoneoPay\Utils\Math;
-use Illuminate\Contracts\Container\Container;
 use Laravel\Lumen\Application;
 use LaravelDoctrine\ORM\DoctrineServiceProvider;
-use LoyaltyCorp\RequestHandlers\Serializer\DoctrineDenormalizer;
-use LoyaltyCorp\RequestHandlers\Serializer\Interfaces\DoctrineDenormalizerEntityFinderInterface;
-use Tests\LoyaltyCorp\Multitenancy\Stubs\Vendor\LoyaltyCorp\RequestHandlers\Serializer\EntityFinderStub;
 
 /**
  * This class bootstraps an application for use in testing.
@@ -65,22 +46,6 @@ final class ApplicationBootstrapper
         // Service providers required by the framework
         $app->register(ContainerServiceProvider::class);
         $app->register(DoctrineServiceProvider::class);
-
-        // Register any singletons
-        $app->singleton(AnnotationReaderInterface::class, AnnotationReader::class);
-        $app->singleton(ArrInterface::class, Arr::class);
-        $app->singleton(ClientInterface::class, LoggingClient::class);
-        $app->singleton(ControllerResolverInterface::class, ControllerResolver::class);
-        $app->singleton(DoctrineDenormalizerEntityFinderInterface::class, EntityFinderStub::class);
-        $app->singleton(EventDispatcherInterface::class, EventDispatcher::class);
-        $app->singleton(GeneratorInterface::class, Generator::class);
-        $app->singleton(MathInterface::class, Math::class);
-        $app->singleton(DoctrineDenormalizer::class, static function (Container $app): DoctrineDenormalizer {
-            return new DoctrineDenormalizer(
-                new EntityFinderStub(),
-                $app->make(ManagerRegistry::class)
-            );
-        });
 
         return $app;
     }
