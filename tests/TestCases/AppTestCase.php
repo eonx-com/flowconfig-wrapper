@@ -3,13 +3,11 @@ declare(strict_types=1);
 
 namespace Tests\LoyaltyCorp\FlowConfig\TestCases;
 
-use Doctrine\Common\Annotations\AnnotationReader;
 use Doctrine\Common\Cache\ArrayCache;
 use Doctrine\Common\Persistence\Mapping\Driver\DefaultFileLocator;
 use Doctrine\Common\Persistence\Mapping\Driver\MappingDriverChain;
 use Doctrine\ORM\EntityManager as DoctrineEntityManager;
 use Doctrine\ORM\EntityManagerInterface as DoctrineEntityManagerInterface;
-use Doctrine\ORM\Mapping\Driver\AnnotationDriver;
 use Doctrine\ORM\Mapping\Driver\XmlDriver;
 use Doctrine\ORM\Tools\SchemaTool;
 use EoneoPay\Externals\Bridge\Laravel\Container;
@@ -25,7 +23,6 @@ use Illuminate\Contracts\Container\BindingResolutionException;
 use Illuminate\Contracts\Validation\Factory;
 use Laravel\Lumen\Application;
 use PHPUnit\Framework\Constraint\Exception as ExceptionConstraint;
-use PHPUnit\Framework\TestCase as BaseTestCase;
 use PHPUnit\Framework\TestResult;
 use Tests\LoyaltyCorp\FlowConfig\Helpers\ApplicationBootstrapper;
 use Throwable;
