@@ -6,7 +6,10 @@ namespace Tests\LoyaltyCorp\FlowConfig\Stubs\External\FlowConfig;
 use CodeFoundation\FlowConfig\Interfaces\CompositeConfigRepositoryInterface;
 use CodeFoundation\FlowConfig\Interfaces\EntityIdentifier;
 
-class CompositeConfigRepositoryStub implements CompositeConfigRepositoryInterface
+/**
+ * Stub for providing the equivalent functionality of CascadeConfig.
+ */
+final class CompositeConfigRepositoryStub implements CompositeConfigRepositoryInterface
 {
     /**
      * @var string[]
@@ -34,7 +37,7 @@ class CompositeConfigRepositoryStub implements CompositeConfigRepositoryInterfac
     }
 
     /**
-     * {@inheritdoc
+     * {@inheritdoc}
      */
     public function canSet(): bool
     {
@@ -42,7 +45,7 @@ class CompositeConfigRepositoryStub implements CompositeConfigRepositoryInterfac
     }
 
     /**
-     * {@inheritdoc
+     * {@inheritdoc}
      */
     public function canSetByEntity(): bool
     {
@@ -50,7 +53,7 @@ class CompositeConfigRepositoryStub implements CompositeConfigRepositoryInterfac
     }
 
     /**
-     * {@inheritdoc
+     * {@inheritdoc}
      */
     public function set(string $key, $value)
     {
@@ -58,7 +61,7 @@ class CompositeConfigRepositoryStub implements CompositeConfigRepositoryInterfac
     }
 
     /**
-     * {@inheritdoc
+     * {@inheritdoc}
      */
     public function getByEntity(EntityIdentifier $entity, string $key, $default = null)
     {
@@ -70,7 +73,7 @@ class CompositeConfigRepositoryStub implements CompositeConfigRepositoryInterfac
     }
 
     /**
-     * {@inheritdoc
+     * {@inheritdoc}
      */
     public function setByEntity(EntityIdentifier $entity, string $key, $value)
     {

@@ -17,7 +17,7 @@ use LoyaltyCorp\FlowConfig\Services\Interfaces\FlowConfigInterface;
  *
  * @coversNothing
  */
-class FlowConfigStub implements FlowConfigInterface
+final class FlowConfigStub implements FlowConfigInterface
 {
     /**
      * @var string[]
