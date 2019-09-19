@@ -10,7 +10,10 @@ use LoyaltyCorp\FlowConfig\Services\Interfaces\FlowConfigInterface;
  * This class explicitly exposes a functional equivalent of the FlowConfig service without
  *  a backing database.
  *
- * This class can be freely used for testing purposes in dependant projects.
+ * This class can be freely used for testing purposes in dependant projects. Copy into the project and
+ *  fix the namespace.
+ *
+ * @see https://github.com/loyaltycorp/flowconfig-wrapper/blob/master/tests/Stubs/Services/FlowConfigStub.php
  *
  * @coversNothing
  */
