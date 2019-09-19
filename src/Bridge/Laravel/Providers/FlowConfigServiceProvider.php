@@ -15,6 +15,9 @@ use LoyaltyCorp\FlowConfig\Database\Exceptions\EntityManagerDriverException;
 use LoyaltyCorp\FlowConfig\Services\FlowConfig;
 use LoyaltyCorp\FlowConfig\Services\Interfaces\FlowConfigInterface;
 
+/**
+ * @SuppressWarnings(PHPMD.CouplingBetweenObjects) Service provider have lots of classes.
+ */
 final class FlowConfigServiceProvider extends ServiceProvider
 {
     /**
