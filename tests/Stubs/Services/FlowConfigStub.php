@@ -34,16 +34,28 @@ class FlowConfigStub implements FlowConfigInterface
      */
     private $systemConfig;
 
+    /**
+     * FlowConfigStub constructor.
+     *
+     * @param string[]|null $defaults Optional fallback defaults. This is equivalent to the setting the
+     *  read only repository settings.
+     */
     public function __construct(?array $defaults = null)
     {
         $this->defaults = $defaults ?? [];
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function get(string $key, ?string $default = null): ?string
     {
         return $this->systemConfig[$key] ?? $this->defaults[$key] ?? $default ?? null;
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function getByEntity(FlowConfigurableInterface $entity, string $key, ?string $default = null): ?string
     {
         return $this->entityConfig[$entity->getEntityType()][$entity->getEntityId()][$key]
@@ -53,11 +65,17 @@ class FlowConfigStub implements FlowConfigInterface
             ?? null;
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function set(string $key, string $value): void
     {
         $this->systemConfig[$key] = $value;
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function setByEntity(FlowConfigurableInterface $entity, string $key, string $value): void
     {
         $this->entityConfig[$entity->getEntityType()][$entity->getEntityId()][$key] = $value;

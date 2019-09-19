@@ -84,5 +84,4 @@ class CompositeConfigRepositoryStub implements CompositeConfigRepositoryInterfac
     {
         return $this->systemConfig[$key] ?? $this->defaults[$key] ?? $default ?? null;
     }
-
 }

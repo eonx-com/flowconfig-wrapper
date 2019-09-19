@@ -7,8 +7,6 @@ use LoyaltyCorp\FlowConfig\Services\FlowConfig;
 use PHPUnit\Framework\TestCase;
 use Tests\LoyaltyCorp\FlowConfig\Stubs\Database\Entities\FlowConfigEntityStub;
 use Tests\LoyaltyCorp\FlowConfig\Stubs\External\FlowConfig\CompositeConfigRepositoryStub;
-use Tests\LoyaltyCorp\FlowConfig\Stubs\Services\DoctrineConfigStub;
-use Tests\LoyaltyCorp\FlowConfig\Stubs\Services\DoctrineEntityConfigStub;
 
 /**
  * @covers \LoyaltyCorp\FlowConfig\Services\FlowConfig
