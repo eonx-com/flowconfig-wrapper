@@ -12,8 +12,9 @@
     "ext-json": "*",
     "code-foundation/flow-config": "^0.1.0",
     "doctrine/orm": "^2.6.3",
+    "eoneopay/apiformats": "dev-master",
     "eoneopay/externals": "^1.0@rc",
-    "eoneopay/framework": "dev-master",
+    "eoneopay/framework": "^0.1",
     "eoneopay/utils": "^0.2.8"
   },
   "require-dev": {
@@ -40,7 +41,7 @@
       "Tests\\LoyaltyCorp\\FlowConfig\\": "tests/"
     }
   },
-  "minimum-stability": "dev",
+  "minimum-stability": "stable",
   "config": {
     "optimize-autoloader": true,
     "sort-packages": true
