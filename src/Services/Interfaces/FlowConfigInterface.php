@@ -13,9 +13,9 @@ interface FlowConfigInterface
      * @param string $key
      * @param string|null $default
      *
-     * @return string|null
+     * @return mixed|null
      */
-    public function get(string $key, ?string $default = null): ?string;
+    public function get(string $key, ?string $default = null);
 
     /**
      * Get the config value defined by $key bound to an entity.
@@ -24,9 +24,9 @@ interface FlowConfigInterface
      * @param string $key
      * @param string|null $default
      *
-     * @return string|null
+     * @return mixed|null
      */
-    public function getByEntity(FlowConfigurableInterface $entity, string $key, ?string $default = null): ?string;
+    public function getByEntity(FlowConfigurableInterface $entity, string $key, ?string $default = null);
 
     /**
      * Sets a config value in this repository.

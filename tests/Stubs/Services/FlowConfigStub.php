@@ -48,7 +48,7 @@ final class FlowConfigStub implements FlowConfigInterface
     /**
      * {@inheritdoc}
      */
-    public function get(string $key, ?string $default = null): ?string
+    public function get(string $key, ?string $default = null)
     {
         return $this->systemConfig[$key] ?? $this->defaults[$key] ?? $default ?? null;
     }
@@ -56,7 +56,7 @@ final class FlowConfigStub implements FlowConfigInterface
     /**
      * {@inheritdoc}
      */
-    public function getByEntity(FlowConfigurableInterface $entity, string $key, ?string $default = null): ?string
+    public function getByEntity(FlowConfigurableInterface $entity, string $key, ?string $default = null)
     {
         return $this->entityConfig[$entity->getEntityType()][$entity->getEntityId()][$key]
             ?? $this->systemConfig[$key]
