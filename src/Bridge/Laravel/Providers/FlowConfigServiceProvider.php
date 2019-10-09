@@ -12,6 +12,8 @@ use Illuminate\Contracts\Container\Container;
 use Illuminate\Support\ServiceProvider;
 use LaravelDoctrine\ORM\Extensions\MappingDriverChain;
 use LoyaltyCorp\FlowConfig\Database\Exceptions\EntityManagerDriverException;
+use LoyaltyCorp\FlowConfig\Services\AccessControl\AccessControlFactory;
+use LoyaltyCorp\FlowConfig\Services\AccessControl\Interfaces\AccessControlFactoryInterface;
 use LoyaltyCorp\FlowConfig\Services\FlowConfig;
 use LoyaltyCorp\FlowConfig\Services\Interfaces\FlowConfigInterface;
 
@@ -66,13 +68,29 @@ final class FlowConfigServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
+        // Override this factory in your app to provide access control rules to flow config.
+        $this->app->bindIf(AccessControlFactoryInterface::class, AccessControlFactory::class);
+
         $this->app->bind(FlowConfigInterface::class, static function (Container $app): FlowConfig {
             $entityManager = $app->make('registry')->getManager();
             $autoFlush = false;
 
+            /**
+             * @var \LoyaltyCorp\FlowConfig\Services\AccessControl\Interfaces\AccessControlFactoryInterface $acFactory
+             */
+            $acFactory = $app->make(AccessControlFactoryInterface::class);
+
             $configData = [];
-            $entityConfig = new DoctrineEntityConfig($entityManager, $autoFlush);
-            $systemConfig = new DoctrineConfig($entityManager, $autoFlush);
+            $entityConfig = new DoctrineEntityConfig(
+                $entityManager,
+                $autoFlush,
+                $acFactory->getEntityConfigAccessControl()
+            );
+            $systemConfig = new DoctrineConfig(
+                $entityManager,
+                $autoFlush,
+                $acFactory->getSystemConfigAccessControl()
+            );
             $readOnlyConfig = new ReadonlyConfig($configData);
             $cascade = new CascadeConfig($readOnlyConfig, $systemConfig, $entityConfig);
 

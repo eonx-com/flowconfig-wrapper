@@ -4,6 +4,8 @@ declare(strict_types=1);
 namespace Tests\LoyaltyCorp\FlowConfig\Unit\Bridge\Laravel\Providers;
 
 use LoyaltyCorp\FlowConfig\Bridge\Laravel\Providers\FlowConfigServiceProvider;
+use LoyaltyCorp\FlowConfig\Services\AccessControl\AccessControlFactory;
+use LoyaltyCorp\FlowConfig\Services\AccessControl\Interfaces\AccessControlFactoryInterface;
 use LoyaltyCorp\FlowConfig\Services\FlowConfig;
 use LoyaltyCorp\FlowConfig\Services\Interfaces\FlowConfigInterface;
 use Tests\LoyaltyCorp\FlowConfig\TestCases\Unit\ServiceProviderTestCase;
@@ -20,6 +22,7 @@ final class FlowConfigServiceProviderTest extends ServiceProviderTestCase
     {
         return [
             FlowConfigInterface::class => FlowConfig::class,
+            AccessControlFactoryInterface::class => AccessControlFactory::class
         ];
     }
 

@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace Tests\LoyaltyCorp\FlowConfig\Stubs\External\FlowConfig;
 
-use CodeFoundation\FlowConfig\Interfaces\CompositeConfigRepositoryInterface;
+use CodeFoundation\FlowConfig\Interfaces\Repository\CompositeConfigRepositoryInterface;
 use CodeFoundation\FlowConfig\Interfaces\EntityIdentifier;
 
 /**
