@@ -22,7 +22,7 @@ final class FlowConfigServiceProviderTest extends ServiceProviderTestCase
     {
         return [
             FlowConfigInterface::class => FlowConfig::class,
-            AccessControlFactoryInterface::class => AccessControlFactory::class
+            AccessControlFactoryInterface::class => AccessControlFactory::class,
         ];
     }
 

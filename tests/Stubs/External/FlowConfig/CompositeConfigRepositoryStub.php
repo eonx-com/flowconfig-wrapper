@@ -3,8 +3,8 @@ declare(strict_types=1);
 
 namespace Tests\LoyaltyCorp\FlowConfig\Stubs\External\FlowConfig;
 
-use CodeFoundation\FlowConfig\Interfaces\Repository\CompositeConfigRepositoryInterface;
 use CodeFoundation\FlowConfig\Interfaces\EntityIdentifier;
+use CodeFoundation\FlowConfig\Interfaces\Repository\CompositeConfigRepositoryInterface;
 
 /**
  * Stub for providing the equivalent functionality of CascadeConfig.
@@ -55,9 +55,9 @@ final class CompositeConfigRepositoryStub implements CompositeConfigRepositoryIn
     /**
      * {@inheritdoc}
      */
-    public function set(string $key, $value)
+    public function get(string $key, $default = null)
     {
-        $this->systemConfig[$key] = $value;
+        return $this->systemConfig[$key] ?? $this->defaults[$key] ?? $default ?? null;
     }
 
     /**
@@ -75,16 +75,16 @@ final class CompositeConfigRepositoryStub implements CompositeConfigRepositoryIn
     /**
      * {@inheritdoc}
      */
-    public function setByEntity(EntityIdentifier $entity, string $key, $value)
+    public function set(string $key, $value)
     {
-        $this->entityConfig[$entity->getEntityType()][$entity->getEntityId()][$key] = $value;
+        $this->systemConfig[$key] = $value;
     }
 
     /**
      * {@inheritdoc}
      */
-    public function get(string $key, $default = null)
+    public function setByEntity(EntityIdentifier $entity, string $key, $value)
     {
-        return $this->systemConfig[$key] ?? $this->defaults[$key] ?? $default ?? null;
+        $this->entityConfig[$entity->getEntityType()][$entity->getEntityId()][$key] = $value;
     }
 }

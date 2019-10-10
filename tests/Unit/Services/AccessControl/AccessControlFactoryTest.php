@@ -10,7 +10,7 @@ use Tests\LoyaltyCorp\FlowConfig\TestCases\BaseTestCase;
 /**
  * @covers \LoyaltyCorp\FlowConfig\Services\AccessControl\AccessControlFactory
  */
-class AccessControlFactoryTest extends BaseTestCase
+final class AccessControlFactoryTest extends BaseTestCase
 {
     /**
      * Test that by default, the access control factory returns NullAccessControl instances for both

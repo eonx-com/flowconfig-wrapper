@@ -9,7 +9,7 @@ use LoyaltyCorp\FlowConfig\Services\AccessControl\Interfaces\AccessControlInterf
 /**
  * @coversNothing
  */
-class AccessControlStub implements AccessControlInterface
+final class AccessControlStub implements AccessControlInterface
 {
     /**
      * @var bool

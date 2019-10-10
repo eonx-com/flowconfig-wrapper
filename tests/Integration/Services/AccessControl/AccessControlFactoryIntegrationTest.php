@@ -5,15 +5,17 @@ namespace Tests\LoyaltyCorp\FlowConfig\Integration\Services\AccessControl;
 
 use CodeFoundation\FlowConfig\AccessControl\NullAccessControl;
 use CodeFoundation\FlowConfig\Exceptions\ValueSetException;
-use CodeFoundation\FlowConfig\Interfaces\AccessControl\AccessControlInterface;
 use LoyaltyCorp\FlowConfig\Bridge\Laravel\Providers\FlowConfigServiceProvider;
 use LoyaltyCorp\FlowConfig\Services\AccessControl\Interfaces\AccessControlFactoryInterface;
 use LoyaltyCorp\FlowConfig\Services\FlowConfig;
 use LoyaltyCorp\FlowConfig\Services\Interfaces\FlowConfigInterface;
-use Tests\LoyaltyCorp\FlowConfig\Stubs\Services\AccessControl\AccessControlStub;
+use Tests\LoyaltyCorp\FlowConfig\Stubs\Services\AccessControl\AccessControlFactoryStub;
 use Tests\LoyaltyCorp\FlowConfig\TestCases\AppTestCase;
 
-class AccessControlFactoryIntegrationTest extends AppTestCase
+/**
+ * @coversNothing
+ */
+final class AccessControlFactoryIntegrationTest extends AppTestCase
 {
     /**
      * Tests custom factory implementation, ensuring that the 'canGetKey' and 'canSetKey' methods return the boolean
@@ -73,24 +75,7 @@ class AccessControlFactoryIntegrationTest extends AppTestCase
     {
         $this->createSchema();
 
-        $this->app->instance(AccessControlFactoryInterface::class, new class implements AccessControlFactoryInterface
-        {
-            /**
-             * {@inheritdoc}
-             */
-            public function getEntityConfigAccess(): AccessControlInterface
-            {
-                return new AccessControlStub(true, true);
-            }
-
-            /**
-             * {@inheritdoc}
-             */
-            public function getSystemConfigAccessControl(): AccessControlInterface
-            {
-                return new AccessControlStub(true, false);
-            }
-        });
+        $this->app->instance(AccessControlFactoryInterface::class, new AccessControlFactoryStub());
 
         return $this->app->make(AccessControlFactoryInterface::class);
     }

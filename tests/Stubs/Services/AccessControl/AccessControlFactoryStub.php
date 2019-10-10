@@ -1,20 +1,19 @@
 <?php
 declare(strict_types=1);
 
-namespace LoyaltyCorp\FlowConfig\Services\AccessControl;
+namespace Tests\LoyaltyCorp\FlowConfig\Stubs\Services\AccessControl;
 
-use CodeFoundation\FlowConfig\AccessControl\NullAccessControl;
 use CodeFoundation\FlowConfig\Interfaces\AccessControl\AccessControlInterface;
 use LoyaltyCorp\FlowConfig\Services\AccessControl\Interfaces\AccessControlFactoryInterface;
 
-final class AccessControlFactory implements AccessControlFactoryInterface
+final class AccessControlFactoryStub implements AccessControlFactoryInterface
 {
     /**
      * {@inheritdoc}
      */
     public function getEntityConfigAccess(): AccessControlInterface
     {
-        return new NullAccessControl();
+        return new AccessControlStub(true, true);
     }
 
     /**
@@ -22,6 +21,6 @@ final class AccessControlFactory implements AccessControlFactoryInterface
      */
     public function getSystemConfigAccessControl(): AccessControlInterface
     {
-        return new NullAccessControl();
+        return new AccessControlStub(true, false);
     }
 }
