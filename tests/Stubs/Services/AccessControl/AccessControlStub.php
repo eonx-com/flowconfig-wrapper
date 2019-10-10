@@ -3,8 +3,8 @@ declare(strict_types=1);
 
 namespace Tests\LoyaltyCorp\FlowConfig\Stubs\Services\AccessControl;
 
-use CodeFoundation\FlowConfig\Interfaces\AccessControl\AccessControlInterface;
 use CodeFoundation\FlowConfig\Interfaces\EntityIdentifier;
+use LoyaltyCorp\FlowConfig\Services\AccessControl\Interfaces\AccessControlInterface;
 
 /**
  * @coversNothing

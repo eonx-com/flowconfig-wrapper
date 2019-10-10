@@ -24,7 +24,7 @@ class AccessControlFactoryIntegrationTest extends AppTestCase
     public function testFactoryImplementation(): void
     {
         $factory = $this->getFactoryInstance();
-        $entityAccessControl = $factory->getEntityConfigAccessControl();
+        $entityAccessControl = $factory->getEntityConfigAccess();
         $systemAccessControl = $factory->getSystemConfigAccessControl();
 
         self::assertTrue($entityAccessControl->canGetKey('test-key'));
@@ -44,7 +44,7 @@ class AccessControlFactoryIntegrationTest extends AppTestCase
     {
         $factory = $this->getFactoryInstance();
         $flowConfig = $this->getFlowConfig();
-        $entityAccessControl = $factory->getEntityConfigAccessControl();
+        $entityAccessControl = $factory->getEntityConfigAccess();
         $systemAccessControl = $factory->getSystemConfigAccessControl();
 
         // The return instance should not be of type NullAccessControl
@@ -73,11 +73,12 @@ class AccessControlFactoryIntegrationTest extends AppTestCase
     {
         $this->createSchema();
 
-        $this->app->instance(AccessControlFactoryInterface::class, new class implements AccessControlFactoryInterface {
+        $this->app->instance(AccessControlFactoryInterface::class, new class implements AccessControlFactoryInterface
+        {
             /**
              * {@inheritdoc}
              */
-            public function getEntityConfigAccessControl(): AccessControlInterface
+            public function getEntityConfigAccess(): AccessControlInterface
             {
                 return new AccessControlStub(true, true);
             }

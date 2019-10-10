@@ -12,7 +12,7 @@ class AccessControlFactory implements AccessControlFactoryInterface
     /**
      * {@inheritdoc}
      */
-    public function getEntityConfigAccessControl(): AccessControlInterface
+    public function getEntityConfigAccess(): AccessControlInterface
     {
         return new NullAccessControl();
     }

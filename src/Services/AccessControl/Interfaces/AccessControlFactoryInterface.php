@@ -12,7 +12,7 @@ interface AccessControlFactoryInterface
      *
      * @return \CodeFoundation\FlowConfig\Interfaces\AccessControl\AccessControlInterface
      */
-    public function getEntityConfigAccessControl(): AccessControlInterface;
+    public function getEntityConfigAccess(): AccessControlInterface;
 
     /**
      * Creates an access control instance for system level configuration for flow config.

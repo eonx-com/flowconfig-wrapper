@@ -27,15 +27,17 @@ final class FlowConfig implements FlowConfigInterface
     /**
      * {@inheritdoc}
      */
-    public function get(string $key, ?string $default = null)
+    public function get(string $key, ?string $default = null): ?string
     {
-        return $this->config->get($key, $default);
+        $value = $this->config->get($key, $default);
+
+        return $value === null ? null : (string)$value;
     }
 
     /**
      * {@inheritdoc}
      */
-    public function getByEntity(FlowConfigurableInterface $entity, string $key, ?string $default = null)
+    public function getByEntity(FlowConfigurableInterface $entity, string $key, ?string $default = null): ?string
     {
         return $this->config->getByEntity($entity, $key, $default);
     }

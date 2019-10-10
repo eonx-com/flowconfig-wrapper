@@ -84,7 +84,7 @@ final class FlowConfigServiceProvider extends ServiceProvider
             $entityConfig = new DoctrineEntityConfig(
                 $entityManager,
                 $autoFlush,
-                $acFactory->getEntityConfigAccessControl()
+                $acFactory->getEntityConfigAccess()
             );
             $systemConfig = new DoctrineConfig(
                 $entityManager,

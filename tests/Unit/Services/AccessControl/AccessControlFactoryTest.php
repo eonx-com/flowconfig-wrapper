@@ -22,7 +22,7 @@ class AccessControlFactoryTest extends BaseTestCase
     {
         $factory = $this->createFactoryInstance();
 
-        $entityAccessControl = $factory->getEntityConfigAccessControl();
+        $entityAccessControl = $factory->getEntityConfigAccess();
         $systemAccessControl = $factory->getSystemConfigAccessControl();
 
         self::assertInstanceOf(NullAccessControl::class, $entityAccessControl);
