@@ -30,7 +30,7 @@ final class AccessControlFactoryTest extends BaseTestCase
     }
 
     /**
-     * Creates an isntance of the factory for testing.
+     * Creates an instance of the factory for testing.
      *
      * @return \LoyaltyCorp\FlowConfig\Services\AccessControl\AccessControlFactory
      */
