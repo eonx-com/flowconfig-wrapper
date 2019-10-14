@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0f0ecc75681caf0dd711237df4dac483",
+    "content-hash": "05414e6f62efbd2b1a63e9be84263307",
     "packages": [
         {
             "name": "code-foundation/flow-config",
-            "version": "0.1.0",
+            "version": "0.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/code-foundation/flow-config.git",
-                "reference": "a126e52cb17c8e36c02ca9cf905ee9be4dcfe7fb"
+                "reference": "fabdd80f22f79e7220f2bbf91d3e18c8c90c8c06"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/code-foundation/flow-config/zipball/a126e52cb17c8e36c02ca9cf905ee9be4dcfe7fb",
-                "reference": "a126e52cb17c8e36c02ca9cf905ee9be4dcfe7fb",
+                "url": "https://api.github.com/repos/code-foundation/flow-config/zipball/fabdd80f22f79e7220f2bbf91d3e18c8c90c8c06",
+                "reference": "fabdd80f22f79e7220f2bbf91d3e18c8c90c8c06",
                 "shasum": ""
             },
             "require": {
@@ -53,7 +53,7 @@
                 "configuration",
                 "entities"
             ],
-            "time": "2019-08-23T03:48:33+00:00"
+            "time": "2019-10-07T01:13:36+00:00"
         },
         {
             "name": "doctrine/annotations",

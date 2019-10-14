@@ -3,8 +3,8 @@ declare(strict_types=1);
 
 namespace Tests\LoyaltyCorp\FlowConfig\Stubs\Services;
 
-use CodeFoundation\FlowConfig\Interfaces\EntityConfigRepositoryInterface;
 use CodeFoundation\FlowConfig\Interfaces\EntityIdentifier;
+use CodeFoundation\FlowConfig\Interfaces\Repository\EntityConfigRepositoryInterface;
 
 final class DoctrineEntityConfigStub implements EntityConfigRepositoryInterface
 {

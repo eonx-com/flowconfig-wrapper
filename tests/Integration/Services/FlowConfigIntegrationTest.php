@@ -61,8 +61,6 @@ final class FlowConfigIntegrationTest extends AppTestCase
      * Get flow config instance from container.
      *
      * @return \LoyaltyCorp\FlowConfig\Services\FlowConfig
-     *
-     * @throws \Illuminate\Contracts\Container\BindingResolutionException
      */
     protected function getFlowConfig(): FlowConfig
     {

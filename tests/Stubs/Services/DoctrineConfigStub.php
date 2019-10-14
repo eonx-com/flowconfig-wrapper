@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace Tests\LoyaltyCorp\FlowConfig\Stubs\Services;
 
-use CodeFoundation\FlowConfig\Interfaces\ConfigRepositoryInterface;
+use CodeFoundation\FlowConfig\Interfaces\Repository\ConfigRepositoryInterface;
 
 final class DoctrineConfigStub implements ConfigRepositoryInterface
 {

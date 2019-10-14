@@ -3,21 +3,21 @@ declare(strict_types=1);
 
 namespace LoyaltyCorp\FlowConfig\Services;
 
-use CodeFoundation\FlowConfig\Interfaces\CompositeConfigRepositoryInterface;
+use CodeFoundation\FlowConfig\Interfaces\Repository\CompositeConfigRepositoryInterface;
 use LoyaltyCorp\FlowConfig\Database\Interfaces\FlowConfigurableInterface;
 use LoyaltyCorp\FlowConfig\Services\Interfaces\FlowConfigInterface;
 
 final class FlowConfig implements FlowConfigInterface
 {
     /**
-     * @var \CodeFoundation\FlowConfig\Interfaces\CompositeConfigRepositoryInterface
+     * @var \CodeFoundation\FlowConfig\Interfaces\Repository\CompositeConfigRepositoryInterface
      */
     private $config;
 
     /**
      * FlowConfig constructor.
      *
-     * @param \CodeFoundation\FlowConfig\Interfaces\CompositeConfigRepositoryInterface $config
+     * @param \CodeFoundation\FlowConfig\Interfaces\Repository\CompositeConfigRepositoryInterface $config
      */
     public function __construct(CompositeConfigRepositoryInterface $config)
     {
@@ -29,7 +29,9 @@ final class FlowConfig implements FlowConfigInterface
      */
     public function get(string $key, ?string $default = null): ?string
     {
-        return $this->config->get($key, $default);
+        $value = $this->config->get($key, $default);
+
+        return $value === null ? null : (string)$value;
     }
 
     /**

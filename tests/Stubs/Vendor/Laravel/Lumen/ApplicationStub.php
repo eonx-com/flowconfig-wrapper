@@ -87,6 +87,11 @@ final class ApplicationStub implements Application, ArrayAccess
      */
     public function bindIf($abstract, $concrete = null, $shared = null): void
     {
+        if ($shared === null) {
+            $shared = false;
+        }
+
+        $this->callMethod('bindIf', [$abstract, $concrete, $shared]);
     }
 
     /**
@@ -536,6 +541,7 @@ final class ApplicationStub implements Application, ArrayAccess
         $setMethods = [
             'alias',
             'bind',
+            'bindIf',
             'extend',
             'instance',
             'singleton',
