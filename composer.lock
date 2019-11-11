@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "code-foundation/flow-config",
-            "version": "0.2.0",
+            "version": "0.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/code-foundation/flow-config.git",
-                "reference": "fabdd80f22f79e7220f2bbf91d3e18c8c90c8c06"
+                "reference": "aac3708e82f6276d0e9068362812f99823ad4862"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/code-foundation/flow-config/zipball/fabdd80f22f79e7220f2bbf91d3e18c8c90c8c06",
-                "reference": "fabdd80f22f79e7220f2bbf91d3e18c8c90c8c06",
+                "url": "https://api.github.com/repos/code-foundation/flow-config/zipball/aac3708e82f6276d0e9068362812f99823ad4862",
+                "reference": "aac3708e82f6276d0e9068362812f99823ad4862",
                 "shasum": ""
             },
             "require": {
@@ -53,7 +53,7 @@
                 "configuration",
                 "entities"
             ],
-            "time": "2019-10-07T01:13:36+00:00"
+            "time": "2019-11-11T02:18:54+00:00"
         },
         {
             "name": "doctrine/annotations",
@@ -1104,6 +1104,7 @@
                 "eoneopay",
                 "formats"
             ],
+            "abandoned": "eonx-com/apiformats",
             "time": "2019-07-10T02:36:46+00:00"
         },
         {
@@ -1188,6 +1189,7 @@
             "keywords": [
                 "external"
             ],
+            "abandoned": "eonx-com/externals",
             "time": "2019-09-23T01:29:32+00:00"
         },
         {
@@ -1238,6 +1240,7 @@
                 "eoneopay",
                 "framework"
             ],
+            "abandoned": "eonx-com/framework",
             "time": "2019-09-01T22:59:44+00:00"
         },
         {
@@ -1298,6 +1301,7 @@
                 "helpers",
                 "utilities"
             ],
+            "abandoned": "eonx-com/utils",
             "time": "2019-08-17T14:04:34+00:00"
         },
         {
