@@ -14,10 +14,10 @@
     "doctrine/orm": "^2.6.3",
     "eoneopay/apiformats": "dev-master",
     "eoneopay/externals": "^1.0@rc",
-    "eoneopay/framework": "^0.1",
     "eoneopay/utils": "^0.2.8"
   },
   "require-dev": {
+    "eoneopay/framework": "^0.1",
     "eoneopay/standards": "dev-master",
     "friendsofphp/php-cs-fixer": "^2.9",
     "indigophp/doctrine-annotation-autoload": "^0.1.0",
