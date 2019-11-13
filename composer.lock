@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cc1597e5b257efef203e89e30cba7116",
+    "content-hash": "007c60ac38929377203f38831d82a10d",
     "packages": [
         {
             "name": "code-foundation/flow-config",
@@ -951,22 +951,22 @@
             "time": "2018-06-14T14:45:07+00:00"
         },
         {
-            "name": "eoneopay/apiformats",
-            "version": "dev-master",
+            "name": "eonx-com/apiformats",
+            "version": "v1.0.2",
             "source": {
                 "type": "git",
-                "url": "https://github.com/loyaltycorp/apiformats.git",
-                "reference": "1d2140cc4aaf312a779be0b559e28740d641c941"
+                "url": "https://github.com/eonx-com/apiformats.git",
+                "reference": "0c7a8460c2e15c9090f53492595999a730a963cb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/loyaltycorp/apiformats/zipball/1d2140cc4aaf312a779be0b559e28740d641c941",
-                "reference": "1d2140cc4aaf312a779be0b559e28740d641c941",
+                "url": "https://api.github.com/repos/eonx-com/apiformats/zipball/0c7a8460c2e15c9090f53492595999a730a963cb",
+                "reference": "0c7a8460c2e15c9090f53492595999a730a963cb",
                 "shasum": ""
             },
             "require": {
                 "doctrine/inflector": "^1.3",
-                "eoneopay/utils": "^0.2.0",
+                "eonx-com/utils": "^1.0",
                 "ext-json": "*",
                 "league/fractal": "^0.17.0",
                 "php": ">=7.1",
@@ -977,8 +977,11 @@
             "provide": {
                 "php-http/client-implementation": "1.0"
             },
+            "replace": {
+                "eoneopay/apiformats": "*"
+            },
             "require-dev": {
-                "eoneopay/standards": "dev-master",
+                "eonx-com/standards": "^0.2",
                 "illuminate/http": "^5.8",
                 "illuminate/support": "^5.8",
                 "laravel/lumen-framework": "^5.8",
@@ -1012,21 +1015,20 @@
                 "eoneopay",
                 "formats"
             ],
-            "abandoned": "eonx-com/apiformats",
-            "time": "2019-07-10T02:36:46+00:00"
+            "time": "2019-11-11T00:01:47+00:00"
         },
         {
-            "name": "eoneopay/externals",
-            "version": "v1.1.0-RC2",
+            "name": "eonx-com/externals",
+            "version": "v1.0.2",
             "source": {
                 "type": "git",
-                "url": "https://github.com/loyaltycorp/externals.git",
-                "reference": "ef5115a700830c0fbef71d1923c2dbfc05626f5c"
+                "url": "https://github.com/eonx-com/externals.git",
+                "reference": "93eaee91311189247c952c0830e092abb2037d06"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/loyaltycorp/externals/zipball/ef5115a700830c0fbef71d1923c2dbfc05626f5c",
-                "reference": "ef5115a700830c0fbef71d1923c2dbfc05626f5c",
+                "url": "https://api.github.com/repos/eonx-com/externals/zipball/93eaee91311189247c952c0830e092abb2037d06",
+                "reference": "93eaee91311189247c952c0830e092abb2037d06",
                 "shasum": ""
             },
             "require": {
@@ -1038,17 +1040,20 @@
                 "psr/http-client": "^1.0",
                 "zendframework/zend-diactoros": "^2.1"
             },
+            "replace": {
+                "eoneopay/externals": "^1.0"
+            },
             "require-dev": {
                 "eoneopay/standards": "dev-master",
                 "gedmo/doctrine-extensions": "^2.4",
                 "giggsey/libphonenumber-for-php": "^8.10",
                 "guzzlehttp/guzzle": "^6.0.0",
-                "illuminate/auth": "^6.0",
-                "illuminate/http": "^6.0",
-                "illuminate/validation": "^6.0",
+                "illuminate/auth": "^5.8",
+                "illuminate/http": "^5.8",
+                "illuminate/validation": "^5.8",
                 "indigophp/doctrine-annotation-autoload": "^0.1.0",
                 "laravel-doctrine/extensions": "^1.0",
-                "laravel-doctrine/orm": "1.5.*",
+                "laravel-doctrine/orm": "1.4.*",
                 "league/flysystem": "^1.0",
                 "league/flysystem-aws-s3-v3": "^1.0",
                 "mikey179/vfsstream": "^1.6",
@@ -1059,7 +1064,7 @@
                 "phpstan/phpstan": "^0.11",
                 "phpstan/phpstan-phpunit": "^0.11.0",
                 "phpstan/phpstan-strict-rules": "^0.11.0",
-                "phpunit/phpunit": "^8.0",
+                "phpunit/phpunit": "^7.0",
                 "roave/security-advisories": "dev-master",
                 "sebastian/phpcpd": "^4.0",
                 "squizlabs/php_codesniffer": "3.*",
@@ -1093,25 +1098,24 @@
             "license": [
                 "BSD-3-Clause"
             ],
-            "description": "External libraries shared between Eoneo Pay applications",
+            "description": "External libraries shared between EonX applications",
             "keywords": [
                 "external"
             ],
-            "abandoned": "eonx-com/externals",
-            "time": "2019-11-07T03:43:02+00:00"
+            "time": "2019-11-09T03:43:32+00:00"
         },
         {
-            "name": "eoneopay/utils",
-            "version": "v0.2.13",
+            "name": "eonx-com/utils",
+            "version": "v1.0.2",
             "source": {
                 "type": "git",
-                "url": "https://github.com/loyaltycorp/utils.git",
-                "reference": "981e762b941bf0cc78fb5427cfd75ac956a02fdb"
+                "url": "https://github.com/eonx-com/utils.git",
+                "reference": "e20c1ba295ab760d43e72c1547e8d3aa69296b4e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/loyaltycorp/utils/zipball/981e762b941bf0cc78fb5427cfd75ac956a02fdb",
-                "reference": "981e762b941bf0cc78fb5427cfd75ac956a02fdb",
+                "url": "https://api.github.com/repos/eonx-com/utils/zipball/e20c1ba295ab760d43e72c1547e8d3aa69296b4e",
+                "reference": "e20c1ba295ab760d43e72c1547e8d3aa69296b4e",
                 "shasum": ""
             },
             "require": {
@@ -1119,6 +1123,9 @@
                 "ext-json": "*",
                 "ext-libxml": "*",
                 "php": ">=7.1"
+            },
+            "replace": {
+                "eoneopay/utils": "^0.2"
             },
             "require-dev": {
                 "doctrine/annotations": "^1.6",
@@ -1162,8 +1169,7 @@
                 "helpers",
                 "utilities"
             ],
-            "abandoned": "eonx-com/utils",
-            "time": "2019-11-06T21:13:49+00:00"
+            "time": "2019-11-09T03:22:46+00:00"
         },
         {
             "name": "league/fractal",
@@ -2422,31 +2428,34 @@
             "time": "2019-08-13T17:33:27+00:00"
         },
         {
-            "name": "eoneopay/framework",
-            "version": "v0.1.1",
+            "name": "eonx-com/framework",
+            "version": "v0.1.2",
             "source": {
                 "type": "git",
-                "url": "https://github.com/loyaltycorp/framework.git",
-                "reference": "f34c515d125bf6432f79f410bdf47701061d2499"
+                "url": "https://github.com/eonx-com/framework.git",
+                "reference": "f8b1ebda6bb5d82f1d39f279c51ee01997a46ab0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/loyaltycorp/framework/zipball/f34c515d125bf6432f79f410bdf47701061d2499",
-                "reference": "f34c515d125bf6432f79f410bdf47701061d2499",
+                "url": "https://api.github.com/repos/eonx-com/framework/zipball/f8b1ebda6bb5d82f1d39f279c51ee01997a46ab0",
+                "reference": "f8b1ebda6bb5d82f1d39f279c51ee01997a46ab0",
                 "shasum": ""
             },
             "require": {
-                "eoneopay/apiformats": "dev-master",
-                "eoneopay/externals": "^1.0",
-                "eoneopay/utils": "^0.2",
+                "eonx-com/apiformats": "^1.0",
+                "eonx-com/externals": "^1.0",
+                "eonx-com/utils": "^1.0",
                 "ext-json": "*",
                 "laravel-doctrine/orm": "^1.4",
                 "laravel/lumen-framework": "^5.5",
                 "php": ">=7.2",
                 "vlucas/phpdotenv": "^3.0"
             },
+            "replace": {
+                "eoneopay/framework": "^0.1"
+            },
             "require-dev": {
-                "eoneopay/standards": "dev-master",
+                "eonx-com/standards": "^0.2",
                 "phpmd/phpmd": "^2.6",
                 "phpstan/phpstan": "^0.11",
                 "phpunit/phpunit": "^7.0",
@@ -2464,31 +2473,33 @@
             "license": [
                 "BSD-3-Clause"
             ],
-            "description": "The EoneoPay Framework",
+            "description": "The EonX Framework",
             "keywords": [
                 "eoneopay",
                 "framework"
             ],
-            "abandoned": "eonx-com/framework",
-            "time": "2019-10-15T23:41:47+00:00"
+            "time": "2019-11-11T01:37:07+00:00"
         },
         {
-            "name": "eoneopay/standards",
-            "version": "dev-master",
+            "name": "eonx-com/standards",
+            "version": "v0.2.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/loyaltycorp/standards.git",
-                "reference": "a3467c0bdd27cc5b0c97e42e9510ae058e5adcc7"
+                "url": "https://github.com/eonx-com/standards.git",
+                "reference": "7c240167e7eca4f379236c84222fa3982f0d78b7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/loyaltycorp/standards/zipball/a3467c0bdd27cc5b0c97e42e9510ae058e5adcc7",
-                "reference": "a3467c0bdd27cc5b0c97e42e9510ae058e5adcc7",
+                "url": "https://api.github.com/repos/eonx-com/standards/zipball/7c240167e7eca4f379236c84222fa3982f0d78b7",
+                "reference": "7c240167e7eca4f379236c84222fa3982f0d78b7",
                 "shasum": ""
             },
             "require": {
                 "php": ">=7.1",
                 "slevomat/coding-standard": "~4.0"
+            },
+            "replace": {
+                "eoneopay/standards": "*"
             },
             "require-dev": {
                 "phpstan/phpstan": "^0.11.13",
@@ -2524,8 +2535,7 @@
                 "eoneopay",
                 "standards"
             ],
-            "abandoned": "eonx-com/standards",
-            "time": "2019-10-22T01:17:45+00:00"
+            "time": "2019-11-10T23:58:03+00:00"
         },
         {
             "name": "friendsofphp/php-cs-fixer",
@@ -8582,9 +8592,6 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "eoneopay/apiformats": 20,
-        "eoneopay/externals": 5,
-        "eoneopay/standards": 20,
         "roave/security-advisories": 20
     },
     "prefer-stable": false,

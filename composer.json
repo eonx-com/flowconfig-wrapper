@@ -1,5 +1,5 @@
 {
-  "name": "loyaltycorp/flowconfig-wrapper",
+  "name": "eonx-com/flowconfig-wrapper",
   "description": "Wrapper for Flow Config",
   "keywords": [
     "external",
@@ -12,13 +12,13 @@
     "ext-json": "*",
     "code-foundation/flow-config": "^0.2.0",
     "doctrine/orm": "^2.6.3",
-    "eoneopay/apiformats": "dev-master",
-    "eoneopay/externals": "^1.0@rc",
-    "eoneopay/utils": "^0.2.8"
+    "eonx-com/apiformats": "^1.0",
+    "eonx-com/externals": "^1.0",
+    "eonx-com/utils": "^1.0"
   },
   "require-dev": {
-    "eoneopay/framework": "^0.1",
-    "eoneopay/standards": "dev-master",
+    "eonx-com/framework": "^0.1",
+    "eonx-com/standards": "^0.2",
     "friendsofphp/php-cs-fixer": "^2.9",
     "indigophp/doctrine-annotation-autoload": "^0.1.0",
     "laravel/lumen-framework": "^5.8",
