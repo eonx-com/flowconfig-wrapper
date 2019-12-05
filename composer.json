@@ -13,7 +13,7 @@
     "code-foundation/flow-config": "^0.2.0",
     "doctrine/orm": "^2.6.3",
     "eonx-com/apiformats": "^1.0",
-    "eonx-com/externals": "^1.0",
+    "eonx-com/externals": "^1.0|^2.0",
     "eonx-com/utils": "^1.0"
   },
   "require-dev": {
