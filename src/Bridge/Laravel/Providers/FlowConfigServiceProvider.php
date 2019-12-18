@@ -68,10 +68,12 @@ final class FlowConfigServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        // Override this factory in your app to provide access control rules to flow config.
-        $this->app->bindIf(AccessControlFactoryInterface::class, AccessControlFactory::class);
+        if ($this->app->has(AccessControlFactoryInterface::class) === false) {
+            // Override this factory in your app to provide access control rules to flow config.
+            $this->app->singleton(AccessControlFactoryInterface::class, AccessControlFactory::class);
+        }
 
-        $this->app->bind(FlowConfigInterface::class, static function (Container $app): FlowConfig {
+        $this->app->singleton(FlowConfigInterface::class, static function (Container $app): FlowConfig {
             $entityManager = $app->make('registry')->getManager();
             $autoFlush = false;
 
